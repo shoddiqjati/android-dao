@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">KotlinDao</string>
+    <string name="title">Title</string>
+    <string name="author">Author</string>
+    <string name="add">Add</string>
+    <string name="please_complete">Please complete the fields</string>
+</resources>
