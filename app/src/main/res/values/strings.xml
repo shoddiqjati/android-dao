@@ -4,4 +4,6 @@
     <string name="author">Author</string>
     <string name="add">Add</string>
     <string name="please_complete">Please complete the fields</string>
+    <string name="delete">Delete</string>
+    <string name="books">Books</string>
 </resources>
