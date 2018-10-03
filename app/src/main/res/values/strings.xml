@@ -6,4 +6,6 @@
     <string name="please_complete">Please complete the fields</string>
     <string name="delete">Delete</string>
     <string name="books">Books</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
 </resources>

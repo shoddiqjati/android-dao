@@ -6,7 +6,6 @@ import com.jati.dev.kotlindao.R
 import com.jati.dev.kotlindao.base.BaseActivity
 import com.jati.dev.kotlindao.common.GeneralRecyclerViewAdapter
 import com.jati.dev.kotlindao.entity.Author
-import com.jati.dev.kotlindao.utils.hide
 import com.jati.dev.kotlindao.utils.toast
 import kotlinx.android.synthetic.main.activity_author.*
 import kotlinx.android.synthetic.main.item_book.view.*
@@ -23,8 +22,8 @@ class AuthorActivity : BaseActivity(), AuthorContract.View {
         GeneralRecyclerViewAdapter(R.layout.item_book, authorList)
         { author, view ->
             view.apply {
-                tv_author.hide()
                 tv_title.text = author.name
+                tv_author.text = if (author.sex == 1) getString(R.string.male) else getString(R.string.female)
                 setOnClickListener { toast(author.books.size.toString()) }
             }
         }

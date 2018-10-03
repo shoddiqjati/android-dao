@@ -5,6 +5,7 @@ import android.support.v4.app.DialogFragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.RadioGroup
 import com.jati.dev.kotlindao.R
 import com.jati.dev.kotlindao.entity.Author
 import com.jati.dev.kotlindao.utils.toast
@@ -37,11 +38,17 @@ class AddAuthorDialog : DialogFragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
-        btn_add.setOnClickListener {
-            if (et_author.text.toString().trim().isNotEmpty()) {
-                callback.onAddClicked(Author().apply { name = et_author.text.toString() })
-                dismiss()
-            } else context?.toast(getString(R.string.please_complete))
+        context?.let { context ->
+            btn_add.setOnClickListener {
+                if (et_author.text.toString().trim().isNotEmpty()) {
+                    callback.onAddClicked(Author().apply {
+                        name = et_author.text.toString()
+//                        sex = if (rb_male.isChecked) (1).toString() else (0).toString()
+                        sex = if (rb_male.isChecked) 1 else 0
+                    })
+                    dismiss()
+                } else context.toast(getString(R.string.please_complete))
+            }
         }
     }
 
