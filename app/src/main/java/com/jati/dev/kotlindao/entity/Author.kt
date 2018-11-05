@@ -13,7 +13,6 @@ import io.objectbox.annotation.Uid
 class Author {
     @Id var id: Long = 0
     lateinit var name: String
-    @Uid(4137656287674455990L)
     var sex: Int = 1
     @Backlink
     lateinit var books: List<Book>
